@@ -8,9 +8,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
 </head>
-<!-- dark:bg-stone-800 -->
 
-<body class="bg-slate-200 ">
+<body class="bg-slate-200 dark:bg-stone-800">
     <!-- header part starts -->
     <header class="mt-16 mx-8">
         <h1 class="text-3xl text-center text-emerald-500 font-bold">আপনার গত মাসের মিটার রিডিং এবং বর্তমান মিটার রিডিং দিয়ে জেনে নিন আপনার <span class="underline decoration-wavy decoration-emerald-500 text-yellow-600 font-extrabold">ইলেক্ট্রিসিটি বিল</span>!!!</h1>
@@ -18,29 +17,31 @@
     <!-- main part strats  -->
     <main class="mt-16 w-3/4 mx-auto">
         <!-- input section -->
-        <section class="bg-rose-800 w-full pb-16 rounded-2xl shadow-2xl">
+        <section class="bg-emerald-600 w-full pb-16 rounded-2xl shadow-2xl">
         <div class="grid grid-cols-2 gap-4 mx-auto">
             <div class="mx-auto block mt-12">
-                <h1 class="text-2xl text-yellow-600 mb-4">বর্তমান মিটার রিডিং:</h1>
+                <h1 class="text-2xl text-yellow-600 mb-4 font-extrabold">বর্তমান মিটার রিডিং:</h1>
                 <input class="p-3 rounded-md ring-4 ring-emerald-500 outline-none focus:outline-4 focus:outline-violet-200" type="text" name="" id="present-reading" placeholder="Meter reading">
+                <h1 class="text-2xl text-yellow-600 mt-12  font-extrabold">বর্তমান মিটার রিডিং: <span id="present-unit">00</span></h1>
             </div>
             <div class="mx-auto block mt-12">
-                <h1 class="text-2xl text-yellow-600 mb-4">পূর্ববর্তী মিটার রিডিং:</h1>
+                <h1 class="text-2xl text-yellow-600 mb-4 font-extrabold">পূর্ববর্তী মিটার রিডিং:</h1>
                 <input class="p-3 rounded-md ring-4 ring-emerald-500 outline-none focus:outline-4 focus:outline-violet-200" type="text" name="" id="past-reading" placeholder="Meter reading">
+                <h1 class="text-2xl text-yellow-600 mt-12  font-extrabold">পূর্ববর্তী মিটার রিডিং: <span id="past-unit">00</span></h1>
             </div>
         </div>
         <!-- buttons -->
-        <button id="button" class="py-2 px-4 mt-12 block mx-auto rounded-md bg-emerald-600 text-yellow-600 font-black focus:ring-4 focus:ring-cyan-400 text-xl">মামা, বিল কত?</button>
+        <button id="button" class="py-2 px-4 mt-12 block mx-auto rounded-md bg-yellow-600 text-emerald-600 font-black focus:ring-4 focus:ring-cyan-400 text-xl">মামা, বিল কত?</button>
     </section>
     <!-- result section  -->
     <section class="grid grid-cols-2 gap-4 mt-16 bg-yellow-500 rounded-2xl py-20 shadow-lg">
         <div>
             <h1 class="text-xl text-center text-emerald-500 font-bold">আপনার ব্যবহৃত মোট ইউনিট</h1>
-            <h1 id="unit" class="text-5xl mt-3 text-center text-emerald-500 font-bold">00 <span class="text-xl">ইউনিট</span></h1>
+            <h1 class="text-5xl mt-3 text-center text-emerald-500 font-bold"><span id="unit">00</span> <span class="text-xl">ইউনিট</span></h1>
         </div>
         <div>
             <h1 class="text-xl text-center text-emerald-500 font-bold">আপনার ইলেক্ট্রিসিটি বিল</h1>
-            <h1 id="bill" class="text-5xl mt-3 text-center text-emerald-500 font-bold">00 <span class="text-xl">টাকা</span></h1>
+            <h1  class="text-5xl mt-3 text-center text-emerald-500 font-bold"> <span id="bill">00</span> <span class="text-xl">টাকা</span></h1>
         </div>
     </section>
     </main>
