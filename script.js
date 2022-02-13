@@ -31,46 +31,71 @@ document.getElementById('button').addEventListener('click', function(){
     let billNumber = parseFloat(billText);
     bill.innerText = billNumber;
     if(usedWatt <= 50){
-        let price = usedWatt * zeroToFifty;
+        let price = usedWatt * zeroToFifty + demandCharge;
         const vat = price * 5/100;
-        let valueAddedPrice = vat + price + demandCharge;
+        let valueAddedPrice = vat + price;
         bill.innerText = parseInt(valueAddedPrice);
         
     }
     else if(usedWatt > 50 && usedWatt <= 75){
-        let price = usedWatt * fiftyoneToSevenFive;
+        let price = usedWatt * fiftyoneToSevenFive + demandCharge;
         const vat = price * 5/100;
-        let valueAddedPrice = vat + price + demandCharge;
+        let valueAddedPrice = vat + price;
         bill.innerText = parseInt(valueAddedPrice);
     }
     else if(usedWatt >= 76 && usedWatt <= 200){
-        let price = usedWatt * sevenSixToTwoHundred;
+        let firstSevenFive = 75 * fiftyoneToSevenFive;
+        let thisUnitWatts = usedWatt - 75; 
+        let thisUnitWattsPrice = thisUnitWatts * sevenSixToTwoHundred;
+        let price = thisUnitWattsPrice + firstSevenFive + demandCharge;
         const vat = price * 5/100;
-        let valueAddedPrice = vat + price + demandCharge;
+        let valueAddedPrice = vat + price;
         bill.innerText = parseInt(valueAddedPrice);
     }
     else if(usedWatt >= 201 && usedWatt <= 300){
-        let price = usedWatt * twoZeroOneToThreeHundred;
+        let firstSevenFive = 75 * fiftyoneToSevenFive;
+        let nextOneFiveZero = 125 * sevenSixToTwoHundred;
+        let thisUnitWatts = usedWatt - 200;
+        let thisUnitWattsPrice = thisUnitWatts * twoZeroOneToThreeHundred;
+        let price = firstSevenFive + nextOneFiveZero + thisUnitWattsPrice + demandCharge;
         const vat = price * 5/100;
-        let valueAddedPrice = vat + price + demandCharge;
+        let valueAddedPrice = vat + price;
         bill.innerText = parseInt(valueAddedPrice);
     }
     else if(usedWatt >= 301 && usedWatt <= 400){
-        let price = usedWatt * threeZeroOneToFourHundred;
+        let firstSevenFive = 75 * fiftyoneToSevenFive;
+        let nextOneFiveZero = 125 * sevenSixToTwoHundred;
+        let nextHundred = 100 * twoZeroOneToThreeHundred;
+        let thisUnitWatts = usedWatt - 300;
+        let thisUnitWattsPrice = thisUnitWatts * threeZeroOneToFourHundred;
+        let price = firstSevenFive + nextOneFiveZero + nextHundred + thisUnitWattsPrice + demandCharge;
         const vat = price * 5/100;
-        let valueAddedPrice = vat + price + demandCharge;
+        let valueAddedPrice = vat + price;
         bill.innerText = parseInt(valueAddedPrice);
     }
     else if(usedWatt >= 401 && usedWatt <=600){
-        let price = usedWatt * fourZeroOneToSixHundred;
+        let firstSevenFive = 75 * fiftyoneToSevenFive;
+        let nextOneFiveZero = 125 * sevenSixToTwoHundred;
+        let nextHundred = 100 * twoZeroOneToThreeHundred;
+        let nexterHundred = 100 * threeZeroOneToFourHundred;
+        let thisUnitWatts = usedWatt - 400;
+        let thisUnitWattsPrice = thisUnitWatts * fourZeroOneToSixHundred;
+        let price = firstSevenFive + nextOneFiveZero + nextHundred + nexterHundred + thisUnitWattsPrice + demandCharge;
         const vat = price * 5/100;
-        let valueAddedPrice = vat + price + demandCharge;
+        let valueAddedPrice = vat + price;
         bill.innerText = parseInt(valueAddedPrice);
     }
     else{
-        let price = usedWatt * sixHundredUps;
+        let firstSevenFive = 75 * fiftyoneToSevenFive;
+        let nextOneFiveZero = 125 * sevenSixToTwoHundred;
+        let nextHundred = 100 * twoZeroOneToThreeHundred;
+        let nexterHundred = 100 * threeZeroOneToFourHundred;
+        let nexterTwoHundred = 200 * fourZeroOneToSixHundred;
+        let thisUnitWatts = usedWatt - 600;
+        let thisUnitWattsPrice = thisUnitWatts * sixHundredUps;
+        let price = firstSevenFive + nextOneFiveZero + nextHundred + nexterHundred + nexterTwoHundred + thisUnitWattsPrice + demandCharge;
         const vat = price * 5/100;
-        let valueAddedPrice = vat + price + demandCharge;
+        let valueAddedPrice = vat + price;
         bill.innerText = parseInt(valueAddedPrice);
     }
 })
