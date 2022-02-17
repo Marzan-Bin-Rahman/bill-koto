@@ -2,3 +2,6 @@
 body{
     font-family: 'Hind Siliguri', sans-serif;
 }
+button{
+    box-shadow: 5px 5px 50px 20px rgb(15, 15, 15);
+}
